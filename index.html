@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- EDIT: browser tab + search-result title -->
+  <title>AiCount Solutions — Bookkeeping & financial reporting for freelancers</title>
+  <!-- EDIT: one-sentence description for search & social shares -->
+  <meta name="description" content="AiCount Solutions gives freelancers and sole traders clean books and clear financial reports — so you always know where your money stands. Enquire on WhatsApp." />
+
+  <meta property="og:title" content="AiCount Solutions — Bookkeeping for freelancers" />
+  <meta property="og:description" content="Clean books and clear financial reports for freelancers and sole traders." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>" />
+
+  <style>
+    :root {
+      --brand: #0e7c66;        /* accountant teal-green */
+      --brand-dark: #0a5f4e;
+      --accent: #12b886;
+      --ink: #142019;
+      --muted: #5a6b63;
+      --bg: #ffffff;
+      --bg-soft: #f2f8f5;
+      --border: #dfeae5;
+      --radius: 14px;
+      --max: 1080px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: saturate(180%) blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 66px; }
+    .logo { font-weight: 800; font-size: 20px; letter-spacing: -0.02em; display: flex; align-items: center; gap: 8px; }
+    .logo b { color: var(--brand); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { color: var(--muted); font-size: 15px; font-weight: 500; }
+    .nav-links a:hover { color: var(--ink); }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 15px;
+      padding: 11px 20px; border-radius: 10px; cursor: pointer;
+      transition: transform .08s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .btn-primary { background: var(--brand); color: #fff; box-shadow: 0 6px 18px rgba(14,124,102,.28); }
+    .btn-primary:hover { background: var(--brand-dark); transform: translateY(-1px); }
+    .btn-wa { background: #25D366; color: #0a3d25; box-shadow: 0 6px 18px rgba(37,211,102,.3); }
+    .btn-wa:hover { background: #1fbe5a; transform: translateY(-1px); }
+    .btn-ghost { border: 1px solid var(--border); color: var(--ink); background: #fff; }
+    .btn-ghost:hover { border-color: var(--brand); color: var(--brand); }
+    .nav .btn { padding: 9px 16px; }
+    .wa-ico { width: 18px; height: 18px; fill: currentColor; }
+
+    .hero { text-align: center; padding: 92px 0 72px; background:
+      radial-gradient(60% 60% at 50% 0%, var(--bg-soft) 0%, #fff 70%); }
+    .pill {
+      display: inline-block; font-size: 13px; font-weight: 600; color: var(--brand);
+      background: var(--bg-soft); border: 1px solid var(--border);
+      padding: 6px 14px; border-radius: 999px; margin-bottom: 26px;
+    }
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 58px); line-height: 1.06; letter-spacing: -0.03em;
+      font-weight: 800; max-width: 800px; margin: 0 auto 22px;
+    }
+    .hero h1 .grad { background: linear-gradient(120deg, var(--brand), var(--accent));
+      -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero p.sub { font-size: clamp(17px, 2.4vw, 21px); color: var(--muted); max-width: 640px; margin: 0 auto 34px; }
+    .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .hero .note { margin-top: 16px; font-size: 13px; color: var(--muted); }
+
+    .stats { padding: 34px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--bg-soft); }
+    .stat-row { display: flex; justify-content: center; gap: 64px; flex-wrap: wrap; text-align: center; }
+    .stat b { display: block; font-size: 30px; font-weight: 800; color: var(--brand); letter-spacing: -0.02em; }
+    .stat span { font-size: 14px; color: var(--muted); }
+
+    section.block { padding: 88px 0; }
+    .section-head { text-align: center; max-width: 660px; margin: 0 auto 56px; }
+    .section-head h2 { font-size: clamp(28px, 4vw, 40px); letter-spacing: -0.02em; font-weight: 800; margin-bottom: 14px; }
+    .section-head p { color: var(--muted); font-size: 18px; }
+
+    .grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 820px; margin: 0 auto; }
+    .card { border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; background: #fff; transition: box-shadow .2s ease, transform .2s ease; }
+    .card:hover { box-shadow: 0 12px 32px rgba(20,32,25,.07); transform: translateY(-3px); }
+    .card .ico { width: 48px; height: 48px; border-radius: 12px; background: var(--bg-soft); display: grid; place-items: center; font-size: 25px; margin-bottom: 18px; }
+    .card h3 { font-size: 20px; margin-bottom: 8px; letter-spacing: -0.01em; }
+    .card p { color: var(--muted); font-size: 15px; }
+    .card ul { list-style: none; margin-top: 14px; display: grid; gap: 8px; }
+    .card li { font-size: 14.5px; color: var(--muted); display: flex; gap: 9px; }
+    .card li::before { content: "✓"; color: var(--brand); font-weight: 800; }
+
+    .why { background: var(--bg-soft); }
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .why-item { text-align: center; padding: 8px; }
+    .why-item .ico { font-size: 30px; margin-bottom: 12px; }
+    .why-item h3 { font-size: 18px; margin-bottom: 6px; }
+    .why-item p { color: var(--muted); font-size: 15px; }
+
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; counter-reset: step; }
+    .step { padding: 8px 4px; }
+    .step .n { width: 38px; height: 38px; border-radius: 50%; background: var(--brand); color: #fff; font-weight: 800; display: grid; place-items: center; margin-bottom: 14px; }
+    .step h3 { font-size: 18px; margin-bottom: 6px; }
+    .step p { color: var(--muted); font-size: 15px; }
+
+    .final { text-align: center; padding: 96px 0; }
+    .final h2 { font-size: clamp(30px, 5vw, 46px); letter-spacing: -0.02em; font-weight: 800; margin-bottom: 16px; }
+    .final p { color: var(--muted); font-size: 19px; max-width: 540px; margin: 0 auto 30px; }
+
+    footer { border-top: 1px solid var(--border); padding: 40px 0; color: var(--muted); font-size: 14px; }
+    .foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .foot .foot-links { display: flex; gap: 22px; }
+    .foot a:hover { color: var(--ink); }
+
+    /* floating WhatsApp button */
+    .wa-float { position: fixed; right: 22px; bottom: 22px; z-index: 60; background: #25D366; color: #073e22;
+      width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center;
+      box-shadow: 0 8px 24px rgba(37,211,102,.45); transition: transform .12s ease; }
+    .wa-float:hover { transform: scale(1.06); }
+    .wa-float svg { width: 30px; height: 30px; fill: #fff; }
+
+    @media (max-width: 820px) {
+      .grid2, .why-grid, .steps { grid-template-columns: 1fr; }
+      .nav-links a:not(.btn) { display: none; }
+      .stat-row { gap: 36px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <header>
+    <div class="wrap nav">
+      <div class="logo">📊 <span>Ai<b>Count</b> Solutions</span></div>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#why">Why us</a>
+        <a href="#how">How it works</a>
+        <!-- EDIT: replace 60123456789 with your WhatsApp number (country code, no + or spaces) -->
+        <a href="https://wa.me/60123456789?text=Hi%20AiCount%2C%20I'd%20like%20to%20enquire%20about%20bookkeeping" class="btn btn-wa">
+          <svg class="wa-ico" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.6.2-.2.3-.7 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
+          Enquire
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="pill">📊 Bookkeeping for freelancers &amp; sole traders</span>
+      <h1>Clean books. <span class="grad">Clear numbers.</span><br />More time for your work.</h1>
+      <p class="sub">AiCount Solutions keeps your books tidy and turns them into financial reports you actually understand — so you always know where your money stands, without touching a spreadsheet.</p>
+      <div class="cta-row">
+        <a href="https://wa.me/60123456789?text=Hi%20AiCount%2C%20I'd%20like%20to%20enquire%20about%20bookkeeping" class="btn btn-wa">
+          <svg class="wa-ico" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.6.2-.2.3-.7 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
+          Enquire on WhatsApp
+        </a>
+        <a href="#services" class="btn btn-ghost">See what's included</a>
+      </div>
+      <p class="note">Free 15-minute intro chat • No long-term contracts</p>
+    </div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <div class="stats">
+    <div class="wrap stat-row">
+      <div class="stat"><b>10+ yrs</b><span>Accounting experience</span></div>
+      <div class="stat"><b>Monthly</b><span>Reports you'll understand</span></div>
+      <div class="stat"><b>24 hr</b><span>Typical reply time</span></div>
+    </div>
+  </div>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="block" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What I do for you</h2>
+        <p>Focused help for freelancers and sole traders — no bloated packages, just what you need.</p>
+      </div>
+      <div class="grid2">
+        <div class="card">
+          <div class="ico">📚</div>
+          <h3>Bookkeeping</h3>
+          <p>Your income and expenses recorded accurately and kept up to date, month after month.</p>
+          <ul>
+            <li>Transaction recording &amp; categorisation</li>
+            <li>Bank &amp; card reconciliation</li>
+            <li>Invoice and expense tracking</li>
+            <li>Year-end records ready for tax</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="ico">📈</div>
+          <h3>Financial reporting</h3>
+          <p>Plain-English reports that show how your business is really doing — and where it's heading.</p>
+          <ul>
+            <li>Monthly profit &amp; loss summaries</li>
+            <li>Cash-flow overview</li>
+            <li>Simple management accounts</li>
+            <li>Insights you can act on</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY ===== -->
+  <section class="block why" id="why">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Why freelancers choose AiCount</h2>
+        <p>Big-firm accuracy, without the big-firm distance.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-item"><div class="ico">🎯</div><h3>Made for solo work</h3><p>I only work with freelancers and sole traders, so your setup is never an afterthought.</p></div>
+        <div class="why-item"><div class="ico">💬</div><h3>Easy to reach</h3><p>Message me on WhatsApp and get a real answer — no ticket queues or phone menus.</p></div>
+        <div class="why-item"><div class="ico">🔒</div><h3>Accurate &amp; confidential</h3><p>Your records are handled carefully, kept private, and always ready when you need them.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="block" id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How it works</h2>
+        <p>Getting started takes one message.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><h3>Say hello</h3><p>Message me on WhatsApp with a bit about your work. We'll have a quick, free intro chat.</p></div>
+        <div class="step"><div class="n">2</div><h3>Send your records</h3><p>Share your bank statements and invoices however is easiest — I'll take it from there.</p></div>
+        <div class="step"><div class="n">3</div><h3>Get clear reports</h3><p>Each month you receive tidy books and simple reports, so you always know your numbers.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="final" id="contact">
+    <div class="wrap">
+      <h2>Let's tidy up your books</h2>
+      <p>Send a quick WhatsApp message and I'll get back to you within a day. No pressure, no jargon.</p>
+      <a href="https://wa.me/60123456789?text=Hi%20AiCount%2C%20I'd%20like%20to%20enquire%20about%20bookkeeping" class="btn btn-wa" style="font-size:16px;padding:14px 26px;">
+        <svg class="wa-ico" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.6.2-.2.3-.7 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
+        Enquire on WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="wrap foot">
+      <div>© <span id="yr"></span> AiCount Solutions. All rights reserved.</div>
+      <div class="foot-links">
+        <!-- EDIT: your contact email -->
+        <a href="mailto:jasper.lee@emspaced.com">jasper.lee@emspaced.com</a>
+        <a href="https://wa.me/60123456789">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp button -->
+  <a class="wa-float" href="https://wa.me/60123456789?text=Hi%20AiCount%2C%20I'd%20like%20to%20enquire%20about%20bookkeeping" aria-label="Enquire on WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.02zM12.04 20.15a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.24 8.24 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.24-8.23 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.48-1.38-1.73-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.22.24-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.25 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
+  </a>
+
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
